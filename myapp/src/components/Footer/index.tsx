@@ -1,35 +1,38 @@
 import { GithubOutlined } from '@ant-design/icons';
 import { DefaultFooter } from '@ant-design/pro-components';
 import React from 'react';
+import {SYSTEM_LINK} from "@/constant";
 
 const Footer: React.FC = () => {
+  const defaultMessage = "苏御出品";
+  const currentYear = new Date().getFullYear();
   return (
     <DefaultFooter
+      copyright={`${currentYear} ${defaultMessage}`}
       style={{
         background: 'none',
       }}
       links={[
         {
-          key: 'Ant Design Pro',
-          title: 'Ant Design Pro',
-          href: 'https://pro.ant.design',
+          key: 'planet',
+          title: '优质平台',
+          href: SYSTEM_LINK,
           blankTarget: true,
         },
         {
           key: 'github',
-          title: <GithubOutlined />,
-          href: 'https://github.com/ant-design/ant-design-pro',
+          title: <><GithubOutlined /> 苏御 GitHub </>,
+          href: 'https://github.com/Atopos-suyu',
           blankTarget: true,
         },
         {
-          key: 'Ant Design',
-          title: 'Ant Design',
-          href: 'https://ant.design',
+          key: 'team',
+          title: '校园团队',
+          href: 'https://apps.youkeda.com/',
           blankTarget: true,
         },
       ]}
     />
   );
 };
-
 export default Footer;
